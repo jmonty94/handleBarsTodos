@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const apiController = require('./apiController')
 const { User }= require('./../models')
 
 const todos = [
@@ -16,9 +17,11 @@ router.get('/users', async (req,res) => {
         console.log(users);
         res.render(`users`, { users });
     } catch (error) {
-        res.status(500).json({ error })
+        res.status(500).json({ error });
     }
-})
+});
+
+router.use('/api', apiController);
 
 
 

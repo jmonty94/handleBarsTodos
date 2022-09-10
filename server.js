@@ -17,7 +17,7 @@ app.set(`view engine`, `handlebars`);
 /**
  * middlewares
  */
-
+app.use(express.static('public'))
 /**body parser */
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
