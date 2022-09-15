@@ -1,5 +1,7 @@
+{{#if isLoggedIn}}
+    <h1>Welcome {{loggedInUser.username}}</h1>
+{{/if}}
 <h1>All the users</h1>
-
 <ul>
     {{#each users as |user|}}
         {{> user_list}}
