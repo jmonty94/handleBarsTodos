@@ -2,10 +2,6 @@
 
 <ul>
     {{#each users as |user|}}
-        <li>
-            <p>ID: {{user.id}}</p>
-            <p>Username: {{ user.username }}</p>
-            <p>Password: {{ user.password }}</p>
-        </li>
+        {{> user_list}}
     {{/each}}
 </ul>
