@@ -1,40 +1,42 @@
-const {Model, DataTypes } = require('sequelize');
+const {Model, DataTypes} = require('sequelize');
+
 const sequelize = require('./../config/connection');
 
-class Todo extends Model {}
+
+class Todo extends Model {
+}
 
 Todo.init(
-    {
-        id: {
-            type: DataTypes.UUID,
-            primaryKey: true,
-            defaultValue: DataTypes.UUIDV4,
-        },
-        todo: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                notNull: true,
-                len: [6],
-            }
-        },
-        isCompleted: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: false,
-        },
-        userId: {
-            type: DataTypes.UUID,
-            references: {
-                model: `users`,
-                key: `id`,
-            },
-        },
+  {
+    id: {
+      type: DataTypes.UUID,
+      primaryKey: true,
+      defaultValue: DataTypes.UUIDV4,
     },
-    {
-        sequelize,
-        modelName: `todos`,
+    todo: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: true,
+      }
     },
+    isCompleted: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: false,
+    },
+    userId: {
+      type: DataTypes.UUID,
+      references: {
+        model: 'users',
+        key: 'id',
+      },
+    }
+  },
+  {
+    sequelize,
+    modelName: 'todos',
+  }
 );
 
-module.exports = Todo
+module.exports = Todo;

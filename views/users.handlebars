@@ -1,9 +1,12 @@
+<!-- username password -->
 {{#if isLoggedIn}}
-    <h1>Welcome {{loggedInUser.username}}</h1>
+  <h1>Welcome logged in user: {{loggedInUser.username}}</h1>
 {{/if}}
+
 <h1>All the users</h1>
 <ul>
-    {{#each users as |user|}}
-        {{> user_list}}
-    {{/each}}
+  {{#each users as |user| }}
+    {{> user_list}}
+  {{/each}}
 </ul>
+
