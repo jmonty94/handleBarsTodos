@@ -1,14 +1,14 @@
 module.exports = [
     {
-        userName: 'Captain Fox',
+        username: 'Captain Fox',
         password: `Password1$` 
     },
     {
-        userName: `Kirby`,
+        username: `Kirby`,
         password: `Password1$`
     },
     {
-        userName: `Ness`,
+        username: `Ness`,
         password: `Password1$`
     },
 ]

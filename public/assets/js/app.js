@@ -27,7 +27,7 @@ signUpBtn.addEventListener(`click`, async (event) => {
                 password,
             })
         })
-        window.location.href = '/users';
+        window.location.href = '/todos';
         console.log(user);
     } catch (error) {
         console.error({ error });

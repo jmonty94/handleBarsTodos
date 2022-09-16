@@ -1,7 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const exphbs = require(`express-handlebars`);
-const session = require('express-session')
+const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sequelize = require(`./config/connection`);
 const routes = require('./controllers/hompageController.js');
 
@@ -15,6 +16,9 @@ const sessionSettings = {
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUniniated: false,
+    store: new SequelizeStore({
+        db: sequelize,
+    })
 };
 
 const app = express();

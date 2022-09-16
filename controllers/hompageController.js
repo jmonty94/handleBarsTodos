@@ -32,7 +32,15 @@ router.get('/users/:userId', async (req,res) => {
     } catch (error) {
         res.status(500).json({ error });
     }
-})
+});
+
+router.get('/todos', async (req,res) => {
+    if (!req.session.isLoggedIn) {
+        return res.redirect('/');
+    }
+    res.render('todos');
+
+});
 
 router.use('/api', apiController);
 
